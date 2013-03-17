@@ -6,51 +6,17 @@
 </title>
 <script src="http://www.html5canvastutorials.com/libraries/kinetic-v4.3.3-beta.js"></script>
 <script src='/js/libs/underscore-min.js'></script>
+<script src='/js/logic/game.js'></script>
+<script src='/js/logic/field.js'></script>
+<script src='/js/logic/ship.js'></script>
+<script src='/js/logic/cell.js'></script>
 </head>
 <body>
   Sea buttle will be here
   <div id='my_ships'></div>
   <script>
-    var stage = new Kinetic.Stage({
-      container: 'my_ships',
-      width: 500,
-      height: 500
-    });
-
-    var layer = new Kinetic.Layer();
-
-    var txt = new Kinetic.Text({
-      width: 50,
-      height: 50,
-      align: 'center',
-      fontSize: 20,
-      fontFamily: 'Calibri',
-      fill: 'black'
-    });
-
-    var rect = new Kinetic.Rect({
-      x: 0,
-      y: 0,
-      width: 400,
-      height: 400,
-      fill: 'yellow',
-      offset: {
-        x: -50,
-        y: -50
-      },
-      strokeWidth: 1,
-      stroke: 'black'
-    });
-
-    _.each([1, 2, 3, 4, 5, 6, 7, 8, 9],
-      function(num){
-        txt.setY(0);
-        txt.setX(50 + 40 * (num - 1));
-        txt.setText(num);
-        layer.add(txt);
-    });
-    layer.add(rect);
-    stage.add(layer);
+    game = new Game();
+    game.start();
   </script>
 </body>
 </html>
