@@ -4,8 +4,48 @@
 <title>
   Sea Buttle
 </title>
+<script src="http://www.html5canvastutorials.com/libraries/kinetic-v4.3.3-beta.js"></script>
+<script src='/js/libs/underscore-min.js'></script>
 </head>
 <body>
   Sea buttle will be here
+  <div id='my_ships'></div>
+  <script>
+    var stage = new Kinetic.Stage({
+      container: 'my_ships',
+      width: 500,
+      height: 500
+    });
+
+    var layer = new Kinetic.Layer();
+
+    var txt = new Kinetic.Text({
+      x: 0,
+      y: 0,
+      fontSize: 20,
+      fontFamily: 'Calibri',
+      fill: 'black',
+      text: 'a b c d e f g h i j'
+    });
+
+    var rect = new Kinetic.Rect({
+      x: 0,
+      y: 0,
+      width: 400,
+      height: 400,
+      fill: 'yellow',
+      offset: {
+        x: -50,
+        y: -50
+      },
+      strokeWidth: 1,
+      stroke: 'black'
+    });
+
+    txt.setText('WTF?');
+    layer.add(txt);
+    layer.add(rect);
+    stage.add(layer);
+  </script>
 </body>
 </html>
