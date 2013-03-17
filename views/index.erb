@@ -20,12 +20,12 @@
     var layer = new Kinetic.Layer();
 
     var txt = new Kinetic.Text({
-      x: 0,
-      y: 0,
+      width: 50,
+      height: 50,
+      align: 'center',
       fontSize: 20,
       fontFamily: 'Calibri',
-      fill: 'black',
-      text: 'a b c d e f g h i j'
+      fill: 'black'
     });
 
     var rect = new Kinetic.Rect({
@@ -42,8 +42,13 @@
       stroke: 'black'
     });
 
-    txt.setText('WTF?');
-    layer.add(txt);
+    _.each([1, 2, 3, 4, 5, 6, 7, 8, 9],
+      function(num){
+        txt.setY(0);
+        txt.setX(50 + 40 * (num - 1));
+        txt.setText(num);
+        layer.add(txt);
+    });
     layer.add(rect);
     stage.add(layer);
   </script>
